@@ -8,14 +8,16 @@ boot.img: a.out
 	mkdir -p _boot/boot/grub
 	cp a.out _boot
 	cp grub.cfg _boot/boot/grub/
+	cp testmodule.txt _boot
+	cp anothermodule.txt _boot
 	$(MKRESCUE) -o $@ _boot
 	rm -rf _boot
 
-a.out: boot.S kernel.c
-	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) boot.S kernel.c  
+a.out: boot.S io.S kernel.c
+	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) boot.S io.S kernel.c  
 
 test: boot.img
-	qemu-system-i386 -cdrom boot.img
+	qemu-system-i386 -serial stdio -cdrom boot.img
 
 clean:
 	rm -f boot.img a.out
