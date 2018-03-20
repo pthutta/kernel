@@ -1,10 +1,11 @@
-#define PORT 0x3f8   /* COM1 */
 #include "multiboot2.h"
+#include "memory.h"
+
+#define PORT 0x3f8   /* COM1 */
 
 static volatile unsigned char *video = ( unsigned char * ) 0xB8000;
 
 int inb(int port);
-
 void outb(int port, int c);
 
 void init_serial() {
@@ -17,8 +18,7 @@ void init_serial() {
    outb(PORT + 4, 0x0B);    // IRQs enabled, RTS/DSR set
 }
 
-static void clear( void )
-{
+static void clear( void ) {
     for ( int i = 0; i < 80 * 24 * 2; i ++ )
         video[ i ] = 0;
 }
@@ -64,9 +64,79 @@ static void putchar(int c) {
     ++x;
 }
 
-void puts(const char *str) {
+void putsInline(const char *str) {
     do putchar(*str); while (*str++);
+}
+
+void puts(const char *str) {
+    putsInline(str);
     putchar('\n');
+}
+
+void printUInt(unsigned int number) {
+    unsigned int a = number;
+
+    if (number > 9) {
+        printUInt(number / 10);
+    }
+    putchar('0' + (a % 10));
+}
+
+void print(unsigned int number) {
+    printUInt(number);
+    puts("");
+}
+
+void check(int val) {
+    if (val == 0) {
+        puts("Fail :(");
+    }
+    else {
+        puts("Success :)");
+    }
+}
+
+void testMemory() {
+    int *x = (int *) malloc(sizeof(int));
+    *x = 10;
+    check(*x == 10);
+    print(x);
+
+    x = (int *) realloc(x, 3 * sizeof(int));
+    check(*x == 10);
+
+    x = (int *) realloc(x, 2 * sizeof(int));
+    check(*x == 10);
+
+    free(x);
+
+    int *y = (int *) malloc(sizeof(int));
+    int *z = (int *) malloc(sizeof(int));
+
+    *y = 6;
+    *z = 42;
+
+    check(*y == 6);
+    check(*z == 42);
+
+    print(y);
+    print(z);
+
+    free(z);
+    free(y);
+
+    void *large = malloc(4*1024);
+    print(large);
+    free(large);
+
+    large = malloc(2*4*1024 - 1);
+    print(large);
+    
+    void *small = malloc(12);
+    print(small);
+
+    free(large);
+    free(small);
 }
 
 void main(unsigned long magic, unsigned long addr) {
@@ -107,6 +177,9 @@ void main(unsigned long magic, unsigned long addr) {
 
         tag = (struct multiboot_tag *) data;
     }
+
+    setUpPaging();
+    testMemory();
 
     while (1) {
         char c = read_serial();

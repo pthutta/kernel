@@ -13,8 +13,8 @@ boot.img: a.out
 	$(MKRESCUE) -o $@ _boot
 	rm -rf _boot
 
-a.out: boot.S io.S kernel.c
-	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) boot.S io.S kernel.c  
+a.out: boot.S io.S paging.S kernel.c
+	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) boot.S io.S paging.S kernel.c memory.c
 
 test: boot.img
 	qemu-system-i386 -serial stdio -cdrom boot.img
