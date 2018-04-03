@@ -1,6 +1,8 @@
 #ifndef MEMORY_H
 #define MEMORY_H
 
+#include <stdlib.h>
+
 #define PAGE_TABLES 64
 #define PAGE_COUNT ((PAGE_TABLES)*(1024))
 #define FRAME_COUNT ((1024)*(1024))

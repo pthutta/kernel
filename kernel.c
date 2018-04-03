@@ -1,49 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "multiboot2.h"
 #include "memory.h"
-
-#define PORT 0x3f8   /* COM1 */
+#include "serial.h"
 
 static volatile unsigned char *video = ( unsigned char * ) 0xB8000;
-
-int inb(int port);
-void outb(int port, int c);
-
-void init_serial() {
-   outb(PORT + 1, 0x00);    // Disable all interrupts
-   outb(PORT + 3, 0x80);    // Enable DLAB (set baud rate divisor)
-   outb(PORT + 0, 0x03);    // Set divisor to 3 (lo byte) 38400 baud
-   outb(PORT + 1, 0x00);    //                  (hi byte)
-   outb(PORT + 3, 0x03);    // 8 bits, no parity, one stop bit
-   outb(PORT + 2, 0xC7);    // Enable FIFO, clear them, with 14-byte threshold
-   outb(PORT + 4, 0x0B);    // IRQs enabled, RTS/DSR set
-}
 
 static void clear( void ) {
     for ( int i = 0; i < 80 * 24 * 2; i ++ )
         video[ i ] = 0;
 }
 
-int is_transmit_empty() {
-   return inb(PORT + 5) & 0x20;
-}
- 
-void write_serial(char a) {
-   while (is_transmit_empty() == 0);
- 
-   outb(PORT,a);
-}
-
-int serial_received() {
-   return inb(PORT + 5) & 1;
-}
- 
-char read_serial() {
-   while (serial_received() == 0);
- 
-   return inb(PORT);
-}
-
-static void putchar(int c) {
+static void putchar_k(int c) {
     const int columns = 80;
     const int lines = 24;
     static int x = 0, y = 0;
@@ -65,12 +33,12 @@ static void putchar(int c) {
 }
 
 void putsInline(const char *str) {
-    do putchar(*str); while (*str++);
+    do putchar_k(*str); while (*str++);
 }
 
-void puts(const char *str) {
+void puts_k(const char *str) {
     putsInline(str);
-    putchar('\n');
+    putchar_k('\n');
 }
 
 void printUInt(unsigned int number) {
@@ -79,20 +47,20 @@ void printUInt(unsigned int number) {
     if (number > 9) {
         printUInt(number / 10);
     }
-    putchar('0' + (a % 10));
+    putchar_k('0' + (a % 10));
 }
 
 void print(unsigned int number) {
     printUInt(number);
-    puts("");
+    puts_k("");
 }
 
 void check(int val) {
     if (val == 0) {
-        puts("Fail :(");
+        puts_k("Fail :(");
     }
     else {
-        puts("Success :)");
+        puts_k("Success :)");
     }
 }
 
@@ -139,37 +107,56 @@ void testMemory() {
     free(small);
 }
 
+void printModule(struct multiboot_tag_module *module) {
+    char *text = (char *) module->mod_start;
+    while (text != module->mod_end) {
+        putchar_k(*text);
+        text++;
+    }
+
+    puts_k("");
+}
+
+void obtainReservedMemory(struct multiboot_tag_mmap *mmap) {
+    multiboot_memory_map_t *entry = mmap->entries;
+
+    while ((unsigned long) entry < (unsigned long) mmap + mmap->size) {
+        if (entry->type == MULTIBOOT_MEMORY_RESERVED) {
+            for (unsigned long i = entry->addr; i < (unsigned long)(entry->addr + entry->len); ++i) {
+                unsigned int frameIndex = (i & (~0xFFF)) / 0x1000;
+                bitmap[frameIndex / INT_SIZE] |= (1 << (frameIndex % INT_SIZE));
+            }
+        }
+        entry++;
+    }
+}
+
 void main(unsigned long magic, unsigned long addr) {
     clear();
 
     if (magic != MULTIBOOT2_BOOTLOADER_MAGIC) {
-        puts("invalid magic number :-(");
+        puts_k("invalid magic number :-(");
         return;
     }
 
     if (addr & 7) {
-        puts("unaligned mbi :-(");
+        puts_k("unaligned mbi :-(");
         return;
     }
 
     init_serial();
 
-    //puts("hello world, i guess?");
+    //puts_k("hello world, i guess?");
 
     unsigned long data = addr + 8;
     struct multiboot_tag *tag = (struct multiboot_tag *) data;
 
     while (tag->type != MULTIBOOT_TAG_TYPE_END) {
         if (tag->type == MULTIBOOT_TAG_TYPE_MODULE) {
-            struct multiboot_tag_module *module = (struct multiboot_tag_module *) data;
-
-            char *text = (char *) module->mod_start;
-            while (text != module->mod_end) {
-                putchar(*text);
-                text++;
-            }
-
-            puts("");
+            printModule((struct multiboot_tag_module *) data);
+        }
+        else if (tag->type == MULTIBOOT_TAG_TYPE_MMAP) {
+            obtainReservedMemory((struct multiboot_tag_mmap *) data);
         }
 
         data += tag->size + 8;
@@ -181,9 +168,20 @@ void main(unsigned long magic, unsigned long addr) {
     setUpPaging();
     testMemory();
 
-    while (1) {
+    /*for (unsigned int i = 0; i < FRAME_COUNT / INT_SIZE; ++i) {
+        if (bitmap[i] != 0) {
+            putsInline("reserved: ");
+            print(i);
+        }
+    }*/
+
+    /*while (1) {
         char c = read_serial();
-        putchar(c);
+        putchar_k(c);
         write_serial(c);
-    }
+    }*/
+
+    int cislo;
+    scanf("%d", &cislo);
+    printf("Hello pdclib! Your number is = %d\n", cislo);
 }

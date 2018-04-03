@@ -1,6 +1,5 @@
 CC = gcc
-CFLAGS = -ffreestanding -nostdlib -static -fno-stack-protector -m32 -fno-PIC
-LDFLAGS = -Wl,-melf_i386
+CFLAGS = -ffreestanding -nostdlib -static -fno-stack-protector -m32 -fno-PIC -nostdinc
 GRUB = $(HOME)/prog/grub/bin/
 MKRESCUE = env PATH=$$PATH:$(GRUB) grub-mkrescue
 
@@ -14,7 +13,8 @@ boot.img: a.out
 	rm -rf _boot
 
 a.out: boot.S io.S paging.S kernel.c
-	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) boot.S io.S paging.S kernel.c memory.c
+	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) -Iincludes/ boot.S io.S paging.S kernel.c memory.c serial.c pdclib-master/_build/libpdc.a -lgcc
+LDFLAGS = -Wl,-melf_i386
 
 test: boot.img
 	qemu-system-i386 -serial stdio -cdrom boot.img

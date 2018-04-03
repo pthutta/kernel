@@ -4,19 +4,17 @@
 
 unsigned int page_directory[1024] __attribute__((aligned(4096)));
 unsigned int page_tables[PAGE_TABLES][1024] __attribute__((aligned(4096)));
-unsigned int bitmap[FRAME_COUNT / INT_SIZE];
+unsigned int bitmap[FRAME_COUNT / INT_SIZE] = {0};
 unsigned int lastAllocatedPage;
 unsigned int lastAllocatedFrame;
 
 
-void setUpPaging() {        
-    for (int i = 0; i < 1024; ++i)
-    {
+void setUpPaging() {
+    for (int i = 0; i < 1024; ++i) {
         page_directory[i] = 0x00000002; //Supervisor, Write Enabled, Not Present
     }
 
-    for (int i = 0; i < 1024; ++i)
-    {
+    for (int i = 0; i < 1024; ++i) {
         page_tables[0][i] = (i * 0x1000) | 3; //Supervisor, Read / Write, Present
         bitmap[i / INT_SIZE] |= (1 << (i % INT_SIZE));
     }
