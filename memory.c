@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "memory.h"
 
 // PAGING
@@ -209,17 +210,6 @@ void free(void *ptr) {
             block->next = freed;
         }
     }
-}
-
-void *memcpy(void *to, void *from, unsigned int size) {
-    char *source = (char *) from;
-    char *dest = (char *) to;
-
-    for (int i = 0; i < size; ++i) {
-        dest[i] = source[i];
-    }
-
-    return to;
 }
 
 void *realloc(void *ptr, size_t bytes) {

@@ -175,13 +175,11 @@ void main(unsigned long magic, unsigned long addr) {
         }
     }*/
 
-    /*while (1) {
-        char c = read_serial();
-        putchar_k(c);
-        write_serial(c);
-    }*/
+    printf("Hello pdclib!\n");
 
-    int cislo;
-    scanf("%d", &cislo);
-    printf("Hello pdclib! Your number is = %d\n", cislo);
+    while (1) {
+        char c = read_serial();
+        putchar(c);
+        write_serial(c);
+    }   
 }

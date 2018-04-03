@@ -12,9 +12,13 @@ boot.img: a.out
 	$(MKRESCUE) -o $@ _boot
 	rm -rf _boot
 
-a.out: boot.S io.S paging.S kernel.c
+a.out: boot.S io.S paging.S kernel.c memory.c serial.c pdclib-master/_build/libpdc.a
 	$(CC) -o $@ -T linkscript $(CFLAGS) $(LDFLAGS) -Iincludes/ boot.S io.S paging.S kernel.c memory.c serial.c pdclib-master/_build/libpdc.a -lgcc
 LDFLAGS = -Wl,-melf_i386
+
+pdclib-master/_build/libpdc.a:
+	mkdir pdclib-master/_build
+	(cd pdclib-master/_build ; cmake .. ; $(MAKE))
 
 test: boot.img
 	qemu-system-i386 -serial stdio -cdrom boot.img

@@ -38,6 +38,4 @@ freeBlock *getNewBlock();
 
 freeBlock *expand(freeBlock *last);
 
-void *memcpy(void *to, void *from, unsigned int size);
-
 #endif
