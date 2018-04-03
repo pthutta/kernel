@@ -21,3 +21,4 @@ test: boot.img
 
 clean:
 	rm -f boot.img a.out
+	rm -rf pdclib-master/_build

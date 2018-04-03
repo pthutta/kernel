@@ -1,13 +1,10 @@
 #ifndef MEMORY_H
 #define MEMORY_H
 
-#include <stdlib.h>
-
 #define PAGE_TABLES 64
 #define PAGE_COUNT ((PAGE_TABLES)*(1024))
 #define FRAME_COUNT ((1024)*(1024))
 #define INT_SIZE 32
-#define NULL ( (void *) 0)
 
 // PAGING
 
@@ -41,12 +38,6 @@ freeBlock *getNewBlock();
 
 freeBlock *expand(freeBlock *last);
 
-void *malloc(unsigned int bytes);
-
-void free(void *ptr);
-
 void *memcpy(void *to, void *from, unsigned int size);
-
-void *realloc(void *ptr, unsigned int bytes);
 
 #endif

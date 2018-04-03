@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "memory.h"
 
 // PAGING
@@ -113,7 +114,7 @@ freeBlock *expand(freeBlock *last) {
     }
 }
 
-void *malloc(unsigned int bytes) {
+void *malloc(size_t bytes) {
     // page was not allocated yet or all free blocks were already allocated
     if (freeList == NULL) {
         freeList = getNewBlock();
@@ -221,7 +222,7 @@ void *memcpy(void *to, void *from, unsigned int size) {
     return to;
 }
 
-void *realloc(void *ptr, unsigned int bytes) {
+void *realloc(void *ptr, size_t bytes) {
     if (bytes == 0) {
         free(ptr);
         return NULL;
