@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -ffreestanding -nostdlib -static -fno-stack-protector -m32 -fno-PIC -nostdinc -g
+CFLAGS = -ffreestanding -nostdlib -static -fno-stack-protector -m32 -fno-PIC -nostdinc -g -std=c99
 GRUB = $(HOME)/prog/grub/bin/
 MKRESCUE = env PATH=$$PATH:$(GRUB) grub-mkrescue
 
@@ -39,6 +39,6 @@ test: boot.img
 	qemu-system-i386 -serial stdio -cdrom boot.img
 
 clean:
-	rm -f boot.img a.out
+	rm -f boot.img a.out hello.out
 	rm -rf pdclib-master/_build
 	rm -rf pdclib-master-user/_build
