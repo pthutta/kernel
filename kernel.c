@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "multiboot2.h"
 #include "memory.h"
 #include "serial.h"
+#include "calls.h"
 
 static volatile unsigned char *video = ( unsigned char * ) 0xB8000;
 
@@ -109,9 +111,33 @@ void testMemory() {
 
 void printModule(struct multiboot_tag_module *module) {
     char *text = (char *) module->mod_start;
-    while (text != module->mod_end) {
-        putchar_k(*text);
-        text++;
+
+    if (strstr( module->cmdline, "exec" ) == module->cmdline) {
+        unsigned int size = module->mod_end - module->mod_start;
+        unsigned int address = 0;
+
+        if (!strcmp( module->cmdline, "exec.data" )) {
+            address = 0x0180A000;
+            putsInline("exec.data");
+            
+        } else if (!strcmp( module->cmdline, "exec.text" )) {
+            address = 0x01800000;
+            putsInline("exec.text");
+        }
+
+        memcpy((void *) address, (void *) module->mod_start, size);
+        if (memcmp((void *) address, (void *) module->mod_start, size) == 0) {
+            putsInline("copy successful");
+        }
+        else {
+            putsInline("copy failed");
+        }
+    }
+    else {
+        while (text != module->mod_end) {
+            putchar_k(*text);
+            text++;
+        }
     }
 
     puts_k("");
@@ -168,6 +194,21 @@ void main(unsigned long magic, unsigned long addr) {
     setUpPaging();
     testMemory();
 
+    unsigned int moduleAddress = 0x01800000;
+    for (int i = 0; i < 1024; ++i)
+    {
+        page_tables[6][i] = (moduleAddress + i * 0x1000) | 7;
+    }
+    page_directory[6] = ((unsigned int) page_tables[6]) | 7;
+
+    for (int i = 192; i < 224; ++i)
+    {
+        bitmap[i] = 0xFFFFFFFF;
+    }
+
+    setUpGDT();
+    setUpIDT();
+
     /*for (unsigned int i = 0; i < FRAME_COUNT / INT_SIZE; ++i) {
         if (bitmap[i] != 0) {
             putsInline("reserved: ");
@@ -176,10 +217,15 @@ void main(unsigned long magic, unsigned long addr) {
     }*/
 
     printf("Hello pdclib!\n");
+    
+    unsigned int userStack = 7*1024*1024*4 - 1;
+    runModule(moduleAddress, userStack, &tss[1]);
 
-    while (1) {
+    printf("Welcome back, to kernel space!\n");
+
+    /*while (1) {
         char c = read_serial();
-        putchar(c);
+        putchar_k(c);
         write_serial(c);
-    }   
+    }*/
 }

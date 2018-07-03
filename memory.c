@@ -10,6 +10,7 @@ unsigned int bitmap[FRAME_COUNT / INT_SIZE] = {0};
 unsigned int lastAllocatedPage;
 unsigned int lastAllocatedFrame;
 
+extern unsigned int stackCount = 0;
 
 void setUpPaging() {
     for (int i = 0; i < 1024; ++i) {
@@ -29,7 +30,7 @@ void setUpPaging() {
     enablePaging();
 }
 
-void *allocPage() {
+unsigned int allocFrame() {
     unsigned int frameIndex;
     unsigned int count = 0;
     int isAllocated = 1;
@@ -41,16 +42,24 @@ void *allocPage() {
 
         count++;
         if (count == FRAME_COUNT) { // free frame not found
-            return NULL;
+            return 0;
         }
 
     } while (isAllocated != 0);
 
-    if (lastAllocatedPage >= PAGE_COUNT) { // free page not found
+    bitmap[frameIndex / INT_SIZE] |= (1 << (frameIndex % INT_SIZE)); // set bit to 1 (is allocated)
+    return frameIndex;
+}
+
+void *allocPage() {
+    if (lastAllocatedPage >= (PAGE_COUNT - ((1024 - stackCount % 1024) + stackCount))) { // free page not found
         return NULL;
     }
 
-    bitmap[frameIndex / INT_SIZE] |= (1 << (frameIndex % INT_SIZE)); // set bit to 1 (is allocated)
+    unsigned int frameIndex = allocFrame();
+    if (frameIndex == 0) {
+        return NULL;
+    }
 
     lastAllocatedPage++;
     unsigned int pageDirIndex = lastAllocatedPage / 1024;

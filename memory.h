@@ -3,6 +3,7 @@
 
 #define PAGE_TABLES 64
 #define PAGE_COUNT ((PAGE_TABLES)*(1024))
+#define PAGE_SIZE ((4)*(1024)*(1024))
 #define FRAME_COUNT ((1024)*(1024))
 #define INT_SIZE 32
 
@@ -20,6 +21,8 @@ void enablePaging();
 
 void setUpPaging();
 
+unsigned int allocFrame();
+
 void *allocPage();
 
 void freePage();
@@ -33,6 +36,7 @@ typedef struct freeBlock {
 } freeBlock;
 
 extern freeBlock *freeList;
+extern unsigned int stackCount;
 
 freeBlock *getNewBlock();
 

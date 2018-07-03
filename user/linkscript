@@ -1,0 +1,22 @@
+ENTRY(_start);
+_start = 0x01800000;
+
+SECTIONS
+{
+    /* Load code from the first page of last page table */
+    . = 0x01800000;
+    .text ALIGN(4K) :
+    {
+        *(.text*)
+    }
+
+    /* Load data from this adress */
+    . = 0x0180A000;
+    .data ALIGN(4K) :
+    {
+        *(.rodata*)
+        *(.data*)
+        *(COMMON)
+        *(.bss*)
+    }
+}

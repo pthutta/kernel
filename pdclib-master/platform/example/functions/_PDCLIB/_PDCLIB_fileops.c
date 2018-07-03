@@ -20,7 +20,7 @@ static bool readf( _PDCLIB_fd_t self, void * buf, size_t length,
         str[i] = read_serial();
     }
     *numBytesRead = length;
-    return false;
+    return true;
 }
 
 static bool writef( _PDCLIB_fd_t self, const void * buf, size_t length, 

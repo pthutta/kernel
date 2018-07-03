@@ -1,0 +1,7 @@
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/install.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/list_install_components.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/rebuild_cache.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/pdc.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/install/strip.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/install/local.dir
+/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/edit_cache.dir
