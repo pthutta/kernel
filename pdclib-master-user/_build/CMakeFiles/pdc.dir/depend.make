@@ -1915,8 +1915,7 @@ CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_Exit.c.o: ../opt/t
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_Exit.c.o: ../platform/example/internals/_PDCLIB_config.h
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_Exit.c.o: ../platform/example/functions/_PDCLIB/_PDCLIB_Exit.c
 
-CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../../serial.h
-CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../../syscall.h
+CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../../user/syscall.h
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../includes/stdbool.h
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../includes/stddef.h
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o: ../includes/stdint.h

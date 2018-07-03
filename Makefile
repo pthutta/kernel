@@ -31,9 +31,14 @@ pdclib-master/_build/libpdc.a:
 	mkdir pdclib-master/_build
 	(cd pdclib-master/_build ; cmake .. ; $(MAKE))
 
+pdclib-master-user/_build/libpdc.a:
+	mkdir pdclib-master-user/_build
+	(cd pdclib-master-user/_build ; cmake .. ; $(MAKE))
+
 test: boot.img
 	qemu-system-i386 -serial stdio -cdrom boot.img
 
 clean:
 	rm -f boot.img a.out
 	rm -rf pdclib-master/_build
+	rm -rf pdclib-master-user/_build

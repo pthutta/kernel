@@ -1916,8 +1916,7 @@ CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_Exit.c.o
  ../platform/example/internals/_PDCLIB_config.h
  /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/platform/example/functions/_PDCLIB/_PDCLIB_Exit.c
 CMakeFiles/pdc.dir/platform/example/functions/_PDCLIB/_PDCLIB_fileops.c.o
- ../../serial.h
- ../../syscall.h
+ ../../user/syscall.h
  ../includes/stdbool.h
  ../includes/stddef.h
  ../includes/stdint.h

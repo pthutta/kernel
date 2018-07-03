@@ -15,28 +15,31 @@ The C compiler identification is GNU, found in "/home/peter/Dokumenty/PB173/Kern
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_41232/fast"
-/usr/bin/make -f CMakeFiles/cmTC_41232.dir/build.make CMakeFiles/cmTC_41232.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c5d61/fast"
 make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_41232.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_41232.dir/testCCompiler.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_41232
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41232.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_41232.dir/testCCompiler.c.o  -o cmTC_41232 -rdynamic 
+/usr/bin/make -f CMakeFiles/cmTC_c5d61.dir/build.make CMakeFiles/cmTC_c5d61.dir/build
+make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c5d61.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c5d61.dir/testCCompiler.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c5d61
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5d61.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_c5d61.dir/testCCompiler.c.o  -o cmTC_c5d61 -rdynamic 
+make[2]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_60651/fast"
-/usr/bin/make -f CMakeFiles/cmTC_60651.dir/build.make CMakeFiles/cmTC_60651.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_84c80/fast"
 make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_60651
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60651.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o  -o cmTC_60651 -rdynamic  
+/usr/bin/make -f CMakeFiles/cmTC_84c80.dir/build.make CMakeFiles/cmTC_84c80.dir/build
+make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_84c80
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84c80.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o  -o cmTC_84c80 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -46,8 +49,9 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_60651' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9db7t0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_60651 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84c80' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmkcdke.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_84c80 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[2]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 
 
@@ -55,14 +59,15 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_60651/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_60651.dir/build.make CMakeFiles/cmTC_60651.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_84c80/fast"]
   ignore line: [make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_60651]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60651.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o  -o cmTC_60651 -rdynamic  ]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_84c80.dir/build.make CMakeFiles/cmTC_84c80.dir/build]
+  ignore line: [make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_84c80]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84c80.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o  -o cmTC_84c80 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -72,13 +77,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_60651' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9db7t0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_60651 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84c80' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmkcdke.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_84c80 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc9db7t0.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmkcdke.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -96,7 +101,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_60651] ==> ignore
+    arg [cmTC_84c80] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -108,7 +113,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_60651.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_84c80.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -142,14 +147,16 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0a678/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0a678.dir/build.make CMakeFiles/cmTC_0a678.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a3b1a/fast"
 make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0a678.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_0a678.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_0a678
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a678.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_0a678.dir/feature_tests.c.o  -o cmTC_0a678 -rdynamic 
+/usr/bin/make -f CMakeFiles/cmTC_a3b1a.dir/build.make CMakeFiles/cmTC_a3b1a.dir/build
+make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a3b1a.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_a3b1a.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a3b1a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3b1a.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_a3b1a.dir/feature_tests.c.o  -o cmTC_a3b1a -rdynamic 
+make[2]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 
 
@@ -162,14 +169,16 @@ make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-mas
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3f13d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3f13d.dir/build.make CMakeFiles/cmTC_3f13d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_055bb/fast"
 make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3f13d.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_3f13d.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3f13d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f13d.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_3f13d.dir/feature_tests.c.o  -o cmTC_3f13d -rdynamic 
+/usr/bin/make -f CMakeFiles/cmTC_055bb.dir/build.make CMakeFiles/cmTC_055bb.dir/build
+make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_055bb.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_055bb.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_055bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_055bb.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_055bb.dir/feature_tests.c.o  -o cmTC_055bb -rdynamic 
+make[2]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 
 
@@ -182,14 +191,16 @@ make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-mas
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_65bcc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_65bcc.dir/build.make CMakeFiles/cmTC_65bcc.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_06558/fast"
 make[1]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_65bcc.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_65bcc.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_65bcc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65bcc.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_65bcc.dir/feature_tests.c.o  -o cmTC_65bcc -rdynamic 
+/usr/bin/make -f CMakeFiles/cmTC_06558.dir/build.make CMakeFiles/cmTC_06558.dir/build
+make[2]: Entering directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06558.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_06558.dir/feature_tests.c.o   -c /home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_06558
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06558.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_06558.dir/feature_tests.c.o  -o cmTC_06558 -rdynamic 
+make[2]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory '/home/peter/Dokumenty/PB173/Kernel/kernel/pdclib-master-user/_build/CMakeFiles/CMakeTmp'
 
 

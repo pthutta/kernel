@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../../serial.h
-
-../../syscall.h
+../../user/syscall.h
 
 ../includes/assert.h
 _PDCLIB_aux.h
@@ -2035,9 +2033,7 @@ _PDCLIB_glue.h
 -
 errno.h
 -
-serial.h
--
-syscall.h
+user/syscall.h
 -
 _PDCLIB_test.h
 -

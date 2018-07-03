@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <_PDCLIB_glue.h>
 #include <errno.h>
-#include <syscall.h>
+#include <user/syscall.h>
 
 static bool readf( _PDCLIB_fd_t self, void * buf, size_t length, 
                    size_t * numBytesRead )
